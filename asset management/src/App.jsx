@@ -14,11 +14,12 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/login" element={<Login />} />
+      <Route path="/" element={<Login />} />
       <Route
         path="/"
-        element={isAuthenticated ? <Layout /> : <Navigate to="/login" />}
+        element={isAuthenticated ? <Layout /> : <Navigate to="/" />}
       >
+        
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/purchase" element={<Purchase />} />
         <Route path="/transfer" element={<Transfer />} />

@@ -19,7 +19,7 @@ function Expenditure() {
   const authorizeroles = ["admin", "commander"];
 
        useEffect(() => {
-          const rawData = localStorage.getItem("purchasehistory");
+          const rawData = localStorage.getItem("purchaseData");
           const parsed = rawData ? JSON.parse(rawData) : [];
           const weapons = [...new Set(parsed.map((item) => item.Weapon))];
           setWeaponList(weapons);

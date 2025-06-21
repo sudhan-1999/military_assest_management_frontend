@@ -31,7 +31,11 @@ const [showModal, setShowModal] = useState(false);
       return matchType && matchDate;
     });
 
-    useEffect(() => {
+    
+    setFiltering(true);
+    setFiltered(result);
+  };
+useEffect(() => {
       const rawData = localStorage.getItem("dashboardData");
       const parsed = rawData ? JSON.parse(rawData) : [];
       const base = [...new Set(parsed.map((item) => item.Base))];
@@ -39,10 +43,6 @@ const [showModal, setShowModal] = useState(false);
       setTypelist(types);
       setBaselist(base);
     }, []);
-    setFiltering(true);
-    setFiltered(result);
-  };
-
 const fetchDashboard = async () => {
   const details = localStorage.getItem("dashboardData");
   const isReload = performance.getEntriesByType("navigation")[0]?.type === "reload";
@@ -85,9 +85,9 @@ useEffect(() => {
               onChange={(e) => setBase(e.target.value)}
             >
               <option value="">-- Select Type --</option>
-              {baselist.map((t, index) => (
-                <option key={index} value={t}>
-                  {t}
+              {baselist.map((b, index) => (
+                <option key={index} value={b}>
+                  {b}
                 </option>
               ))}
             </select>

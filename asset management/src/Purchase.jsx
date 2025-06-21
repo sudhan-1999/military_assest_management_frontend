@@ -19,7 +19,7 @@ function Purchase() {
   const authorizeroles = ["logistic officer", "admin", "commander"];
 
   useEffect(() => {
-    const rawData = localStorage.getItem("purchasehistory");
+    const rawData = localStorage.getItem("purchaseData");
     const parsed = rawData ? JSON.parse(rawData) : [];
     const types = [...new Set(parsed.map((item) => item.Type))];
     setTypelist(types);
