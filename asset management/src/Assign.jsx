@@ -41,7 +41,7 @@ function Assign() {
             "assignedhistory",
             JSON.stringify(response.data)
           );
-          console.log("Assigned history fetched successfully", response.data);
+          
         } catch (error) {
           console.error("Error fetching purchase history", error);
         }

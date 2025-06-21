@@ -59,7 +59,7 @@ function Expenditure() {
   }, [role, token]);
 
     const toExpendasset=async ()=>{
-        console.log(weapon,quantity,reason,base)
+        
         try {
            const response= await axios.post(
         "https://miltary-assest-managemnet-backend.onrender.com/api/expendedasset",
@@ -79,7 +79,6 @@ function Expenditure() {
       setQuantity("");
       setReason("");
       setBase("");
-      console.log("Asset expended successfully", response.data);
       alert("Asset expended successfully");
       fetchexpendedHistory();
       

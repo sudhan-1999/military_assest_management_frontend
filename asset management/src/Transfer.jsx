@@ -17,10 +17,7 @@ function Transfer() {
 
   const authorizeroles = ["logistic officer", "admin", "commander"];
 
-  console.log("role", role);
-  console.log("token", token);
-  console.log("frombase", frombase);
-  console.log("TransferredBy", TransferredBy);
+
 
   useEffect(() => {
     const rawData = localStorage.getItem("purchaseData");
@@ -44,7 +41,7 @@ const fetchtransferHistory = async () => {
           setTransfered(response.data);
           setLoading(false);
           localStorage.setItem("TransferedData", JSON.stringify(response.data));
-          console.log("Transfer history fetched successfully", response.data);
+          
         } catch (error) {
           console.error("Error fetching purchase history", error);
         }
@@ -75,14 +72,14 @@ const fetchtransferHistory = async () => {
             },
           }
         );
-        console.log("Transfer successful", response.data);
+        
         setWeapon("");
         setQuantity("");
         setBase("");
         alert("Asset transferred successfully");
         fetchtransferHistory();
       } catch (error) {
-        console.error("Error transferring asset", error);
+        
         if (error.message == "Request failed with status code 400") {
           alert("Insufficient quantity available for transfer");
         } else {

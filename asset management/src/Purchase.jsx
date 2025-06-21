@@ -70,7 +70,7 @@ function Purchase() {
             },
           }
         );
-        console.log("Purchase successful", response.data);
+        
         setWeapon("");
         setPurchasetype("");
         setQuantity("");
@@ -84,7 +84,7 @@ function Purchase() {
   };
   const handleFilter = () => {
     const result = purchase.filter((item) => {
-      console.log("Filtering type:", type);
+     
       const matchType = type
         ? item.Type?.toLowerCase() === type.toLowerCase()
         : true;

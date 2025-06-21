@@ -36,7 +36,7 @@ function Registeruser() {
             },
           })
       .then((res) => {
-        console.log("User registered successfully", res.data);
+        
         alert("User registered successfully");
         setName("");
         setUserid("");
