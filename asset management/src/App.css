@@ -1,0 +1,14 @@
+#navbar{
+    background-color: #f2f3f4;
+    overflow: hidden;
+}
+#signin{
+  display: flex;
+  justify-content: center;
+}
+.text{
+  margin: 15px;
+}
+.modal {
+  display: block;
+}
