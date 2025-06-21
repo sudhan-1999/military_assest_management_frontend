@@ -30,7 +30,7 @@ function Purchase() {
       if (authorizeroles.includes(role)) {
         try {
           const response = await axios.get(
-            "http://localhost:3000/api/purchasehistory",
+            "https://miltary-assest-managemnet-backend.onrender.com/api/purchasehistory",
             {
               headers: {
                 Authorization: token,
@@ -57,7 +57,7 @@ function Purchase() {
     if (authorizeroles.includes(role)) {
       try {
         const response = await axios.post(
-          "http://localhost:3000/api/purchase",
+          "https://miltary-assest-managemnet-backend.onrender.com/api/purchase",
           {
             Weapon: weapon,
             Type: purchasetype,
@@ -98,60 +98,6 @@ function Purchase() {
 
   return (
     <>
-      {/*<div className="container">
-        <h4>New Purchase </h4>
-        <div className="row mb-3">
-          <div className="col">
-            <input
-              id="weapon"
-              type="text"
-              placeholder="Enter Weapon Name"
-              className="form-control"
-              value={weapon}
-              onChange={(e) => setWeapon(e.target.value)}
-            />
-          </div>
-
-          <div className="col">
-            <input
-              id="type"
-              type="text"
-              placeholder="Enter Type"
-              className="form-control"
-              value={purchasetype}
-              onChange={(e) => setPurchasetype(e.target.value)}
-            />
-          </div>
-
-          <div className="col">
-            <input
-              id="quantity"
-              type="number"
-              placeholder="Enter Quantity"
-              className="form-control"
-              value={quantity}
-              onChange={(e) => setQuantity(Number(e.target.value))}
-            />
-          </div>
-
-          <div className="col">
-            <input
-              id="base"
-              type="text"
-              placeholder="Enter Base"
-              className="form-control"
-              value={base}
-              onChange={(e) => setBase(e.target.value)}
-            />
-          </div>
-
-          <div className="col d-flex align-items-end">
-            <button className="btn btn-primary w-100" onClick={purchasingnew}>
-              Purchase
-            </button>
-          </div>
-        </div>
-      </div>*/}
       <div className="container">
   <h4>New Purchase</h4>
   <div className="row mb-3 g-2">
@@ -212,13 +158,7 @@ function Purchase() {
         <h4>Filter Purchase History</h4>
         <div className="row mb-3">
           <div className="col">
-            {/*<input
-              type="text"
-              placeholder="Enter equipment type (e.g., tank, gun)"
-              className="form-control"
-              value={type}
-              onChange={(e) => setType(e.target.value)}
-            />*/}
+            
             <select
               id="weapon"
               className="form-select"

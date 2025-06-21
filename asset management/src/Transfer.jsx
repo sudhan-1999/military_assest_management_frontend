@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 function Transfer() {
-  //Weapon, Type, Quantity, FromBase, ToBase, TransferredBy
   const [transfered, setTransfered] = useState([]);
   const [loading, setLoading] = useState(true);
   const [weapon, setWeapon] = useState("");
@@ -35,7 +34,7 @@ const fetchtransferHistory = async () => {
       if (authorizeroles.includes(role)) {
         try {
           const response = await axios.get(
-            "http://localhost:3000/api/transfered",
+            "https://miltary-assest-managemnet-backend.onrender.com/api/transfered",
             {
               headers: {
                 Authorization: token,
@@ -62,7 +61,7 @@ const fetchtransferHistory = async () => {
     if (authorizeroles.includes(role)) {
       try {
         const response = await axios.post(
-          "http://localhost:3000/api/transfer",
+          "https://miltary-assest-managemnet-backend.onrender.com/api/transfer",
           {
             Weapon: weapon,
             Quantity: quantity,

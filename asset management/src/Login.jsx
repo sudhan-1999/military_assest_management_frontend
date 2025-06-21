@@ -15,7 +15,7 @@ function Login() {
       console.log("password", password);
       try {
        const res= await  axios
-          .post("http://localhost:3000/api/login", {
+          .post("https://miltary-assest-managemnet-backend.onrender.com/api/login", {
             userid: userId,
             password: password,
           })
@@ -41,20 +41,7 @@ function Login() {
    {error?<h4 className="text-center mb-4" style={{color:"red"}}>Wrong Credentials</h4>:""}
       
     
-        {/*<div className="row mb-3">
-          <label for="inputEmail3" className="col-sm-2 col-form-label">
-            User Id
-          </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              className="form-control"
-              id="inputEmail3"
-              
-              onChange={(e)=>{setUserId(e.target.value)}}
-            />
-          </div>
-        </div>*/}
+       
         <div className="mb-3">
     <label htmlFor="inputUserId" className="form-label">
       User ID
@@ -66,14 +53,7 @@ function Login() {
       onChange={(e) => setUserId(e.target.value)}
     />
   </div>
-         {/*<div className="row mb-3">
-          <label for="inputPassword3" className="col-sm-2 col-form-label">
-            Password
-          </label>
-          <div className="col-sm-10">
-            <input type="password" className="form-control" id="inputPassword3"  value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
-          </div>
-        </div>*/}
+        
         <div className="mb-3">
     <label htmlFor="inputPassword" className="form-label">
       Password

@@ -22,15 +22,9 @@ function Registeruser() {
       alert("You are not authorized to register users");
       return;
     }
-    /*const user = {
-      name: name,
-      userid: userid,
-      password: password,
-      role: role,
-      base: base,
-    };*/
+    
     await axios
-      .post("http://localhost:3000/api/registeruser", {
+      .post("https://miltary-assest-managemnet-backend.onrender.com/api/registeruser", {
         name: name,
         userid: userid,
         password: password,

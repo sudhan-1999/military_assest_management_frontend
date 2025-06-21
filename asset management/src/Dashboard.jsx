@@ -53,7 +53,7 @@ const fetchDashboard = async () => {
     setLoading(false);
   } else {
     try {
-      const response = await axios.get("http://localhost:3000/api/dashboard", {
+      const response = await axios.get("https://miltary-assest-managemnet-backend.onrender.com/api/dashboard", {
         headers: { Authorization: token },
       });
       setDashboard(response.data);
@@ -123,45 +123,7 @@ useEffect(() => {
         </div>
       </div>
 
-      {/*<div className="container-md">
-      
-        <div className="row">
-          {filtered.length === 0 && (
-            <p className="text-center" style={{ color: "red" }}>
-              No Dashboard history available.
-            </p>
-          )}
-          {loading ? (
-            <div className="spinner-border m-5" role="status">
-  <span className="sr-only"></span>
-</div>
-          ) : (
-            (filtering ? filtered : dashboard).map((item, index) => (
-              <div
-                className="col-12 col-sm-6 col-md-4 mb-4"
-                key={item._id || index}
-              >
-                <div className="card h-100 shadow-sm">
-                  <div className="card-body">
-                    <h5 className="card-title">Weapon: {item.Weapon}</h5>
-                    <p className="card-text">OpeningBalance: {item.OpeningBalance}</p>
-                    <p className="card-text">AssignedBy: {item.AssignedBy}</p>
-                    <p className="card-text">PurchaseQuantity: {item.PurchaseQty}</p>
-                    <p className="card-text">TransferedIn: {item.TransferedIn}</p>
-                    <p className="card-text">TransferedOut: {item.TransferedOut}</p>
-                    <p className="card-text">AssignedQuantity: {item.AssignedQuantity}</p>
-                    <p className="card-text">ExpendedQuantity: {item.ExpendedQuantity}</p>
-                    <p className="card-text">NetMovement: {item.NetMovement}</p>
-                    <p className="card-text">Base: {item.Base}</p>
-                  </div>
-                </div>
-              </div>
-          ))
-          ): (
-      <p className="text-danger text-center">No dashboard data available</p>
-    )}
-        </div>
-      </div>*/}
+    
       <div className="container-md">
         <div className="row">
           {loading ? (

@@ -28,7 +28,7 @@ function Assign() {
       if (authorizeroles.includes(role)) {
         try {
           const response = await axios.get(
-            "http://localhost:3000/api/assigned",
+            "https://miltary-assest-managemnet-backend.onrender.com/api/assigned",
             {
               headers: {
                 Authorization: token,
@@ -60,7 +60,7 @@ function Assign() {
   const toAssignasset = async () => {
     try {
       await axios.post(
-        "http://localhost:3000/api/assign",
+        "https://miltary-assest-managemnet-backend.onrender.com/api/assign",
         {
           Weapon: weapon,
           Quantity: quantity,

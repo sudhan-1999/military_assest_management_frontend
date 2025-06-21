@@ -29,7 +29,7 @@ function Expenditure() {
       if (authorizeroles.includes(role)) {
         try {
           const response = await axios.get(
-            "http://localhost:3000/api/expendedassets",
+            "https://miltary-assest-managemnet-backend.onrender.com/api/expendedassets",
             {
               headers: {
                 Authorization: token,
@@ -42,7 +42,7 @@ function Expenditure() {
             "assignedhistory",
             JSON.stringify(response.data)
           );
-          console.log("Assigned history fetched successfully", response.data);
+          
         } catch (error) {
           console.error("Error fetching purchase history", error);
         }
@@ -62,7 +62,7 @@ function Expenditure() {
         console.log(weapon,quantity,reason,base)
         try {
            const response= await axios.post(
-        "http://localhost:3000/api/expendedasset",
+        "https://miltary-assest-managemnet-backend.onrender.com/api/expendedasset",
         {
           Weapon:weapon,
         Quantity:quantity,
